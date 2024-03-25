@@ -50,7 +50,12 @@ function App() {
 
   return (
     <>
-      <h1>Phonebook</h1>
+      <h1>
+        <span style={{ color: "#9c9ef9aa" }}>P</span>h
+        <span style={{ color: "#9cf9c0aa" }}>o</span>n
+        <span style={{ color: "#61dafbaa" }}>e</span>b
+        <span style={{ color: "#80945baa" }}>♾️</span>k
+      </h1>
       <ContactForm onSubmit={handleAddContact} />
       <SearchBox onFilterContacts={onFilterContacts} filter={filter} />
       <ContactList data={filteredContacts} onDeleteContact={onDeleteContact} />

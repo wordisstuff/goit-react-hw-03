@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+h1{
+  color: aquamarine;
+  transition: 340ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+h1:hover{
+  transform: scale(1.2);
+}
+
+.white{
+  color: aliceblue;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
