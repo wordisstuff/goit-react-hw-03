@@ -3,13 +3,22 @@ import validationSchema from "../helpers/validationSchema";
 import { ErrorMessage } from "formik";
 
 import css from "./ContactForm.module.css";
+import { nanoid } from "nanoid";
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ setContacts }) => {
+  const handleAddContact = (values, actions) => {
+    setContacts((prevState) => [
+      ...prevState,
+      { name: values.userName, number: values.userTel, id: nanoid() },
+    ]);
+    actions.resetForm();
+  };
+
   return (
     <>
       <Formik
         initialValues={{ userName: "", userTel: "" }}
-        onSubmit={onSubmit}
+        onSubmit={handleAddContact}
         validationSchema={validationSchema}
       >
         <Form>

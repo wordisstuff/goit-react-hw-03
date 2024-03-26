@@ -22,15 +22,6 @@ function App() {
   });
 
   const [filter, setFilter] = useState("");
-  // const handleAdd = () => { };
-
-  const handleAddContact = (values, actions) => {
-    setContacts((prevState) => [
-      ...prevState,
-      { name: values.userName, number: values.userTel, id: nanoid() },
-    ]);
-    actions.resetForm();
-  };
 
   useEffect(() => {
     localStorage.setItem("Contacts data", JSON.stringify(contacts));
@@ -56,7 +47,7 @@ function App() {
         <span style={{ color: "#61dafbaa" }}>e</span>b
         <span style={{ color: "#80945baa" }}>♾️</span>k
       </h1>
-      <ContactForm onSubmit={handleAddContact} />
+      <ContactForm setContacts={setContacts} />
       <SearchBox onFilterContacts={onFilterContacts} filter={filter} />
       <ContactList data={filteredContacts} onDeleteContact={onDeleteContact} />
     </>
